@@ -20,14 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module vga(input wire clk, rst, 
-    output wire [3:0] r, g, b, output wire hs, vs
+module vga(input wire clk, rst, input [2:0] choice,
+    output wire [3:0] r, g, b, output wire hs, vs, output [7:0] DIG, Y
 );
 wire mclk;
 wire ven;
 wire [9:0] hc;
 wire [9:0] vc;
-//分频 
+//frequency divider 
 clkdiv clock(
     .clk(clk),
     .mclk(mclk)
@@ -35,7 +35,7 @@ clkdiv clock(
 // use ipcore
 clk_VGA clk_25(.clk(clk), .rst(rst), .clk_25m(mclk));
 
-//生成VGA扫描信号 
+//generate VGA scan signal 
 vgaSync syn(
     .clk(mclk),
     .rst(rst),
@@ -45,7 +45,7 @@ vgaSync syn(
     .hc(hc),
     .vc(vc)
 );
-//显示图像 
+//Display image
 vgaRGB rgb(
     .hc(hc),
     .vc(vc),
@@ -55,5 +55,12 @@ vgaRGB rgb(
     .g(g),
     .b(b)
 );
-
+//Display resolution with digital tube
+seg seg(
+    .rst(rst),
+    .clk(clk),
+    .choice(choice),
+    .DIG(DIG),
+    .Y(Y)
+);
 endmodule

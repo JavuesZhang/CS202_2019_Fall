@@ -1,0 +1,207 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 18212
+License: Customer
+
+Current time: 	Fri Dec 20 12:17:30 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 9 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	D:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	lenovo
+User home directory: C:/Users/lenovo
+User working directory: G:/2019fall_digital_design_project
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2017.4
+RDI_DATADIR: D:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: D:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	G:/2019fall_digital_design_project/vivado.log
+Vivado journal file location: 	G:/2019fall_digital_design_project/vivado.jou
+Engine tmp dir: 	G:/2019fall_digital_design_project/.Xil/Vivado-18212-LAPTOP-69NJ2TNC
+
+GUI allocated memory:	175 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 613 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: G:\2019fall_digital_design_project\VGA2.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 62 MB (+62590kb) [00:00:10]
+// [Engine Memory]: 520 MB (+393984kb) [00:00:10]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 75 MB (+10102kb) [00:00:11]
+// [Engine Memory]: 578 MB (+33469kb) [00:00:11]
+// [GUI Memory]: 82 MB (+3368kb) [00:00:11]
+// [Engine Memory]: 613 MB (+6104kb) [00:00:12]
+// [GUI Memory]: 90 MB (+4199kb) [00:00:13]
+// Tcl Message: open_project G:/2019fall_digital_design_project/VGA2.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/ibm/VGA2' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 623 MB. GUI used memory: 44 MB. Current time: 12/20/19 12:17:31 PM CST
+// Project name: VGA2; location: G:/2019fall_digital_design_project; part: xc7a100tfgg484-1
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 7); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v)]", 1, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v)]", 1, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectCodeEditor("vga.v", 236, 428); // cd (w, cj)
+// Elapsed time: 39 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // B (D, cj) - Node
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cj)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cj): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (h, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "seg"); // X (N, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (h, c)
+// 'h' command handler elapsed time: 12 seconds
+dismissDialog("Add Sources"); // c (cj)
+// Tcl Message: close [ open G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v 
+// [Engine Memory]: 651 MB (+7464kb) [00:01:35]
+// I (cj): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// HMemoryUtils.trashcanNow. Engine heap size: 651 MB. GUI used memory: 49 MB. Current time: 12/20/19 12:18:55 PM CST
+// TclEventType: FILE_SET_CHANGE
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, seg (seg.v)]", 6, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, seg (seg.v)]", 6, false, false, false, false, false, true); // B (D, cj) - Double Click
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("seg.v", 188, 467); // cd (w, cj)
+selectCodeEditor("seg.v", 130, 392); // cd (w, cj)
+typeControlKey((HResource) null, "seg.v", 'v'); // cd (w, cj)
+selectCodeEditor("seg.v", 98, 58); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga.v", 1); // k (j, cj)
+selectCodeEditor("vga.v", 458, 197); // cd (w, cj)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "seg.v", 2); // k (j, cj)
+// [GUI Memory]: 96 MB (+2034kb) [00:02:18]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga.v", 1); // k (j, cj)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "seg.v", 2); // k (j, cj)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga.v", 1); // k (j, cj)
+selectCodeEditor("vga.v", 275, 166); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("vga.v", 401, 257); // cd (w, cj)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("vga.v", 258, 175); // cd (w, cj)
+selectCodeEditor("vga.v", 393, 296); // cd (w, cj)
+selectCodeEditor("vga.v", 396, 299); // cd (w, cj)
+// Elapsed time: 16 seconds
+selectCodeEditor("vga.v", 460, 413); // cd (w, cj)
+selectCodeEditor("vga.v", 164, 358); // cd (w, cj)
+selectCodeEditor("vga.v", 414, 192); // cd (w, cj)
+selectCodeEditor("vga.v", 493, 225); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("vga.v", 514, 425); // cd (w, cj)
+// Elapsed time: 21 seconds
+selectCodeEditor("vga.v", 240, 455); // cd (w, cj)
+// [GUI Memory]: 102 MB (+466kb) [00:03:49]
+typeControlKey((HResource) null, "vga.v", 'v'); // cd (w, cj)
+selectCodeEditor("vga.v", 198, 445); // cd (w, cj)
+selectCodeEditor("vga.v", 321, 448); // cd (w, cj)
+selectCodeEditor("vga.v", 331, 460); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 64 seconds
+selectCodeEditor("vga.v", 131, 392); // cd (w, cj)
+selectCodeEditor("vga.v", 15, 376); // cd (w, cj)
+typeControlKey((HResource) null, "vga.v", 'c'); // cd (w, cj)
+selectCodeEditor("vga.v", 155, 373); // cd (w, cj)
+selectCodeEditor("vga.v", 136, 378); // cd (w, cj)
+selectCodeEditor("vga.v", 17, 378); // cd (w, cj)
+selectCodeEditor("vga.v", 21, 378); // cd (w, cj)
+typeControlKey((HResource) null, "vga.v", 'v'); // cd (w, cj)
+selectCodeEditor("vga.v", 23, 376); // cd (w, cj)
+selectCodeEditor("vga.v", 98, 201); // cd (w, cj)
+typeControlKey((HResource) null, "vga.v", 'c'); // cd (w, cj)
+// HMemoryUtils.trashcanNow. Engine heap size: 671 MB. GUI used memory: 50 MB. Current time: 12/20/19 12:22:45 PM CST
+// Elapsed time: 11 seconds
+selectCodeEditor("vga.v", 45, 188); // cd (w, cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), clock : clkdiv (clkdiv.v)]", 2, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), clock : clkdiv (clkdiv.v)]", 2, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), clock : clkdiv (clkdiv.v)]", 2, false, false, false, false, false, true); // B (D, cj) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), syn : vgaSync (vgaSync.v)]", 4, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), syn : vgaSync (vgaSync.v)]", 4, false, false, false, false, false, true); // B (D, cj) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), rgb : vgaRGB (vgaRGB.v)]", 5, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), rgb : vgaRGB (vgaRGB.v)]", 5, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), seg : seg (seg.v)]", 7, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga (vga.v), seg : seg (seg.v)]", 7, false, false, false, false, false, true); // B (D, cj) - Double Click
