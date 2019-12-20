@@ -5,8 +5,8 @@ module vga(input wire clk, rst, input [1:0] choice,
 );
 wire mclk;
 wire ven;
-wire [9:0] hc;
-wire [9:0] vc;
+wire [10:0] hc;
+wire [10:0] vc;
 
 //frequency divider 
 clkdiv clock(
@@ -35,6 +35,7 @@ vgaRGB rgb(
     .vc(vc),
     .videoen(ven),
     .mclk(mclk),
+    .choice(choice),
     .r(r),
     .g(g),
     .b(b)

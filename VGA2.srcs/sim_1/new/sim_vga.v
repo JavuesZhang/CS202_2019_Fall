@@ -38,7 +38,19 @@ module sim_vga( );
     reg [1:0] choice;
     wire [3:0] sr, sb, sg;
     wire hs, vs;
-    vga svga(.clk(sclk), .rst(srst), .choice(choice), .r(sr), .b(sb), .g(sg), .hs(hs), .vs(vs));
+    wire [7:0]DIG;
+    wire [7:0]Y;
+    vga svga(
+        .clk(sclk), 
+        .rst(srst), 
+        .choice(choice), 
+        .r(sr), 
+        .b(sb), 
+        .g(sg), 
+        .hs(hs), 
+        .vs(vs),
+        .DIG(DIG),
+        .Y(Y));
     initial begin
         srst = 1'b0;
         sclk = 1'b0;

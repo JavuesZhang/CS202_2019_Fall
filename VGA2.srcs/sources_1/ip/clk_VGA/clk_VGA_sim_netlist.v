@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Fri Dec 20 17:14:00 2019
-// Host        : DESKTOP-0SRL36N running 64-bit major release  (build 9200)
+// Date        : Fri Dec 20 20:58:56 2019
+// Host        : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               e:/GitHub/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
+//               G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
 // Design      : clk_VGA
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,21 +16,33 @@
 module clk_VGA
    (clk_25m,
     clk_35m,
+    clk_36m,
+    clk_45m,
+    clk_85m,
     resetn,
     clk_in1);
   output clk_25m;
   output clk_35m;
+  output clk_36m;
+  output clk_45m;
+  output clk_85m;
   input resetn;
   input clk_in1;
 
   wire clk_25m;
   wire clk_35m;
+  wire clk_36m;
+  wire clk_45m;
+  wire clk_85m;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire resetn;
 
   clk_VGA_clk_VGA_clk_wiz inst
        (.clk_25m(clk_25m),
         .clk_35m(clk_35m),
+        .clk_36m(clk_36m),
+        .clk_45m(clk_45m),
+        .clk_85m(clk_85m),
         .clk_in1(clk_in1),
         .resetn(resetn));
 endmodule
@@ -39,10 +51,16 @@ endmodule
 module clk_VGA_clk_VGA_clk_wiz
    (clk_25m,
     clk_35m,
+    clk_36m,
+    clk_45m,
+    clk_85m,
     resetn,
     clk_in1);
   output clk_25m;
   output clk_35m;
+  output clk_36m;
+  output clk_45m;
+  output clk_85m;
   input resetn;
   input clk_in1;
 
@@ -50,6 +68,12 @@ module clk_VGA_clk_VGA_clk_wiz
   wire clk_25m_clk_VGA;
   wire clk_35m;
   wire clk_35m_clk_VGA;
+  wire clk_36m;
+  wire clk_36m_clk_VGA;
+  wire clk_45m;
+  wire clk_45m_clk_VGA;
+  wire clk_85m;
+  wire clk_85m_clk_VGA;
   wire clk_in1;
   wire clk_in1_clk_VGA;
   wire clkfbout_buf_clk_VGA;
@@ -61,11 +85,8 @@ module clk_VGA_clk_VGA_clk_wiz
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
@@ -95,6 +116,18 @@ module clk_VGA_clk_VGA_clk_wiz
        (.I(clk_35m_clk_VGA),
         .O(clk_35m));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout3_buf
+       (.I(clk_36m_clk_VGA),
+        .O(clk_36m));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout4_buf
+       (.I(clk_45m_clk_VGA),
+        .O(clk_45m));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout5_buf
+       (.I(clk_85m_clk_VGA),
+        .O(clk_85m));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(8.875000),
@@ -110,16 +143,16 @@ module clk_VGA_clk_VGA_clk_wiz
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(1),
+    .CLKOUT2_DIVIDE(24),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
-    .CLKOUT3_DIVIDE(1),
+    .CLKOUT3_DIVIDE(19),
     .CLKOUT3_DUTY_CYCLE(0.500000),
     .CLKOUT3_PHASE(0.000000),
     .CLKOUT3_USE_FINE_PS("FALSE"),
     .CLKOUT4_CASCADE("FALSE"),
-    .CLKOUT4_DIVIDE(1),
+    .CLKOUT4_DIVIDE(10),
     .CLKOUT4_DUTY_CYCLE(0.500000),
     .CLKOUT4_PHASE(0.000000),
     .CLKOUT4_USE_FINE_PS("FALSE"),
@@ -157,11 +190,11 @@ module clk_VGA_clk_VGA_clk_wiz
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(clk_35m_clk_VGA),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
+        .CLKOUT2(clk_36m_clk_VGA),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
+        .CLKOUT3(clk_45m_clk_VGA),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
-        .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
+        .CLKOUT4(clk_85m_clk_VGA),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),
         .CLKOUT6(NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED),
         .DADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),

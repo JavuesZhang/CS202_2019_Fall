@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Fri Dec 20 17:16:06 2019
-| Host         : DESKTOP-0SRL36N running 64-bit major release  (build 9200)
+| Date         : Fri Dec 20 22:17:13 2019
+| Host         : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command      : report_drc -file vga_drc_opted.rpt -pb vga_drc_opted.pb -rpx vga_drc_opted.rpx
 | Design       : vga
 | Device       : xc7a100tfgg484-1
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 4
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 1          |
+| DPIP-1   | Warning  | Input pipelining                                    | 3          |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -49,7 +49,17 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP rgb/addr2 input rgb/addr2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP rgb/addr0 input rgb/addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP rgb/addr_reg input rgb/addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP rgb/addr_reg input rgb/addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 

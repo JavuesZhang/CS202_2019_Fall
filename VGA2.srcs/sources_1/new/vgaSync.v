@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module vgaSync(input wire clk, rst, input [1:0]choice,
-      output reg hs, vs, videoen, output reg [9:0]hc, vc
+      output reg hs, vs, videoen, output reg [10:0]hc, vc
     );   
 reg vsenable;
 // hc(horizontal counter): control the whole line
@@ -9,21 +9,21 @@ reg vsenable;
 // vsenable: 1:newline
 // hs:horizontal sync pulse
 // vs:vertical sync pulse
-reg[9:0]h_visible_area;
-reg[9:0]h_sync_pulse;
-reg[9:0]h_back_porch;
-reg[9:0]h_front_porch;
-reg[9:0]v_visible_area;
-reg[9:0]v_sync_pulse;
-reg[9:0]v_back_porch;
-reg[9:0]v_front_porch;
+reg[10:0]h_visible_area;
+reg[10:0]h_sync_pulse;
+reg[10:0]h_back_porch;
+reg[10:0]h_front_porch;
+reg[10:0]v_visible_area;
+reg[10:0]v_sync_pulse;
+reg[10:0]v_back_porch;
+reg[10:0]v_front_porch;
 
 /*******************
 input choice 0~3
-1.choice[0]->640*350
-2.choice[1]->640*400
-3.choice[2]->640*480
-4.choice[3]->720*400
+1.choice[0]->640*480
+2.choice[1]->800*600
+3.choice[2]->1024*768
+4.choice[3]->1280*800
 ********************/
 always@*
 begin
@@ -34,42 +34,43 @@ begin
 	h_sync_pulse = 10'd96;
 	h_back_porch = 10'd48;
 	h_front_porch = 10'd16;
-	v_visible_area = 10'd350;
-	v_sync_pulse = 10'd2;
-	v_back_porch = 10'd60;
-	v_front_porch = 10'd37;
-	end
-2'b01:
-	begin
-	h_visible_area = 10'd640;
-	h_sync_pulse = 10'd96;
-	h_back_porch = 10'd48;
-	h_front_porch = 10'd16;
-	v_visible_area = 10'd400;
-	v_sync_pulse = 10'd2;
-	v_back_porch = 10'd35;
-	v_front_porch = 10'd12;
-	end
-2'b10:
-	begin
-	h_visible_area = 10'd640;
-	h_sync_pulse = 10'd96;
-	h_back_porch = 10'd48;
-	h_front_porch = 10'd16;
 	v_visible_area = 10'd480;
 	v_sync_pulse = 10'd2;
 	v_back_porch = 10'd33;
 	v_front_porch = 10'd10;
 	end
+2'b01:
+	begin
+	h_visible_area = 10'd800;
+	h_sync_pulse = 10'd72;
+	h_back_porch = 10'd128;
+	h_front_porch = 10'd24;
+	v_visible_area = 10'd600;
+	v_sync_pulse = 10'd2;
+	v_back_porch = 10'd22;
+	v_front_porch = 10'd1;
+	end
+2'b10:
+	begin
+	h_visible_area = 11'd1024;
+	h_sync_pulse = 10'd176;
+	h_back_porch = 10'd56;
+	h_front_porch = 10'd8;
+	v_visible_area = 10'd768;
+	v_sync_pulse = 10'd8;
+	v_back_porch = 10'd41;
+	v_front_porch = 10'd0;
+	end
 2'b11:
 	begin
-	h_visible_area = 10'd720;
-	h_sync_pulse = 10'd72;
-	h_back_porch = 10'd108;
-	h_front_porch = 10'd36;
-	v_visible_area = 10'd400;
+	h_visible_area = 11'd1280;
+	h_sync_pulse = 10'd136;
+	h_back_porch = 10'd200;
+	h_front_porch = 10'd64;
+	v_visible_area = 10'd800;
 	v_sync_pulse = 10'd3;
-	v_back_porch = 10'd1;
+	v_back_porch = 10'd24;
+	v_front_porch = 10'd1;
 	end
 endcase
 end

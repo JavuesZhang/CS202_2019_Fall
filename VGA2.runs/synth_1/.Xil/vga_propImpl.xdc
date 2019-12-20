@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:E:/GitHub/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc rfile:../../../VGA2.srcs/constrs_1/new/vga_con.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc rfile:../../../VGA2.srcs/constrs_1/new/vga_con.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN H20 [get_ports {b[0]}]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
