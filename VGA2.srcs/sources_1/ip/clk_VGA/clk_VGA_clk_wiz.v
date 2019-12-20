@@ -73,8 +73,7 @@ module clk_VGA_clk_wiz
   output        clk_25m,
   output        clk_35m,
   // Status and control signals
-  input         reset,
-  output        locked,
+  input         resetn,
   input         clk_in1
  );
   // Input buffering
@@ -182,9 +181,8 @@ wire clk_in2_clk_VGA;
     .CLKFBSTOPPED        (clkfbstopped_unused),
     .PWRDWN              (1'b0),
     .RST                 (reset_high));
-  assign reset_high = reset; 
+  assign reset_high = ~resetn; 
 
-  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering

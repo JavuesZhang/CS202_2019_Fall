@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Fri Dec 20 17:03:58 2019
+// Date        : Fri Dec 20 17:14:00 2019
 // Host        : DESKTOP-0SRL36N running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/GitHub/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
@@ -16,40 +16,34 @@
 module clk_VGA
    (clk_25m,
     clk_35m,
-    reset,
-    locked,
+    resetn,
     clk_in1);
   output clk_25m;
   output clk_35m;
-  input reset;
-  output locked;
+  input resetn;
   input clk_in1;
 
   wire clk_25m;
   wire clk_35m;
   (* IBUF_LOW_PWR *) wire clk_in1;
-  wire locked;
-  wire reset;
+  wire resetn;
 
   clk_VGA_clk_VGA_clk_wiz inst
        (.clk_25m(clk_25m),
         .clk_35m(clk_35m),
         .clk_in1(clk_in1),
-        .locked(locked),
-        .reset(reset));
+        .resetn(resetn));
 endmodule
 
 (* ORIG_REF_NAME = "clk_VGA_clk_wiz" *) 
 module clk_VGA_clk_VGA_clk_wiz
    (clk_25m,
     clk_35m,
-    reset,
-    locked,
+    resetn,
     clk_in1);
   output clk_25m;
   output clk_35m;
-  input reset;
-  output locked;
+  input resetn;
   input clk_in1;
 
   wire clk_25m;
@@ -60,8 +54,8 @@ module clk_VGA_clk_VGA_clk_wiz
   wire clk_in1_clk_VGA;
   wire clkfbout_buf_clk_VGA;
   wire clkfbout_clk_VGA;
-  wire locked;
-  wire reset;
+  wire reset_high;
+  wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -75,6 +69,7 @@ module clk_VGA_clk_VGA_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_LOCKED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcm_adv_inst_DO_UNCONNECTED;
 
@@ -176,13 +171,18 @@ module clk_VGA_clk_VGA_clk_wiz
         .DO(NLW_mmcm_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_mmcm_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(locked),
+        .LOCKED(NLW_mmcm_adv_inst_LOCKED_UNCONNECTED),
         .PSCLK(1'b0),
         .PSDONE(NLW_mmcm_adv_inst_PSDONE_UNCONNECTED),
         .PSEN(1'b0),
         .PSINCDEC(1'b0),
         .PWRDWN(1'b0),
-        .RST(reset));
+        .RST(reset_high));
+  LUT1 #(
+    .INIT(2'h1)) 
+    mmcm_adv_inst_i_1
+       (.I0(resetn),
+        .O(reset_high));
 endmodule
 `ifndef GLBL
 `define GLBL

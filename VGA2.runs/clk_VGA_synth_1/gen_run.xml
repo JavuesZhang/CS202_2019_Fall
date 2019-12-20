@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="clk_VGA_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1576832602">
+<GenRun Id="clk_VGA_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1576833206">
   <File Type="PA-TCL" Name="clk_VGA.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="clk_VGA_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="clk_VGA_reports.tcl"/>

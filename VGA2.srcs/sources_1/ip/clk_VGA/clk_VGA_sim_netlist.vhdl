@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Fri Dec 20 17:03:58 2019
+-- Date        : Fri Dec 20 17:14:00 2019
 -- Host        : DESKTOP-0SRL36N running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               e:/GitHub/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.vhdl
@@ -18,8 +18,7 @@ entity clk_VGA_clk_VGA_clk_wiz is
   port (
     clk_25m : out STD_LOGIC;
     clk_35m : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
+    resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -32,6 +31,7 @@ architecture STRUCTURE of clk_VGA_clk_VGA_clk_wiz is
   signal clk_in1_clk_VGA : STD_LOGIC;
   signal clkfbout_buf_clk_VGA : STD_LOGIC;
   signal clkfbout_clk_VGA : STD_LOGIC;
+  signal reset_high : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -45,6 +45,7 @@ architecture STRUCTURE of clk_VGA_clk_VGA_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_LOCKED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
@@ -161,13 +162,21 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       DO(15 downto 0) => NLW_mmcm_adv_inst_DO_UNCONNECTED(15 downto 0),
       DRDY => NLW_mmcm_adv_inst_DRDY_UNCONNECTED,
       DWE => '0',
-      LOCKED => locked,
+      LOCKED => NLW_mmcm_adv_inst_LOCKED_UNCONNECTED,
       PSCLK => '0',
       PSDONE => NLW_mmcm_adv_inst_PSDONE_UNCONNECTED,
       PSEN => '0',
       PSINCDEC => '0',
       PWRDWN => '0',
-      RST => reset
+      RST => reset_high
+    );
+mmcm_adv_inst_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => resetn,
+      O => reset_high
     );
 end STRUCTURE;
 library IEEE;
@@ -178,8 +187,7 @@ entity clk_VGA is
   port (
     clk_25m : out STD_LOGIC;
     clk_35m : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
+    resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -193,7 +201,6 @@ inst: entity work.clk_VGA_clk_VGA_clk_wiz
       clk_25m => clk_25m,
       clk_35m => clk_35m,
       clk_in1 => clk_in1,
-      locked => locked,
-      reset => reset
+      resetn => resetn
     );
 end STRUCTURE;

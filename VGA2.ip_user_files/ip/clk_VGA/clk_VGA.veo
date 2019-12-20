@@ -75,8 +75,7 @@
     .clk_25m(clk_25m),     // output clk_25m
     .clk_35m(clk_35m),     // output clk_35m
     // Status and control signals
-    .reset(reset), // input reset
-    .locked(locked),       // output locked
+    .resetn(resetn), // input resetn
    // Clock in ports
     .clk_in1(clk_in1));      // input clk_in1
 // INST_TAG_END ------ End INSTANTIATION Template ---------
