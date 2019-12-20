@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ibm/VGA2/VGA2.runs/synth_1'
+HD_PWD='E:/GitHub/2019fall_digital_design_project/VGA2.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
