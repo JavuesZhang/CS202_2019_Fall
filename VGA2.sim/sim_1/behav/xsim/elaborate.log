@@ -1,6 +1,6 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a8cbfce2deb14d04af07e1794311e4c1 --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_1 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sim_vga_behav xil_defaultlib.sim_vga xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a8cbfce2deb14d04af07e1794311e4c1 --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_1 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sim_vga_behav xil_defaultlib.sim_vga xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2017.4/nightly/2017_12_15_2086221/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_4/simulation/blk_mem_gen_v8_4.v:2419]
@@ -17,6 +17,7 @@ Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1(C_FAMILY="art...
 Compiling module xil_defaultlib.blk_mem_gen_0
 Compiling module xil_defaultlib.vgaRGB
+Compiling module xil_defaultlib.seg
 Compiling module xil_defaultlib.vga
 Compiling module xil_defaultlib.sim_vga
 Compiling module xil_defaultlib.glbl

@@ -1,34 +1,14 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2019/12/11 19:48:04
-// Design Name: 
-// Module Name: vgaRGB
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module vgaRGB(input wire [9:0]hc, vc, input wire videoen, mclk,
        output reg [3:0] r, g, b
     );
 
 reg [17:0] addr = 0;
-wire [11:0] data;    
+wire [11:0] data;
+
 //ipºËµ÷ÓÃ
 blk_mem_gen_0 ROM0( .clka(mclk), .addra(addr), .douta(data) );
-
 
 always @ (posedge mclk)
 begin

@@ -2,10 +2,11 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/Users/ibm/VGA2/VGA2.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sim_1/new/sim_vga.v,1576745964,verilog,,,,sim_vga,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1576072120,verilog,,C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/clkdiv.v,,blk_mem_gen_0,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/clkdiv.v,1576745016,verilog,,C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vga.v,,clkdiv,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vga.v,1576745013,verilog,,C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vgaRGB.v,,vga,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vgaRGB.v,1576073702,verilog,,C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vgaSync.v,,vgaRGB,,,,,,,,
-C:/Users/ibm/VGA2/VGA2.srcs/sources_1/new/vgaSync.v,1576743459,verilog,,C:/Users/ibm/VGA2/VGA2.srcs/sim_1/new/sim_vga.v,,vgaSync,,,,,,,,
+G:/2019fall_digital_design_project/VGA2.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sim_1/new/sim_vga.v,1576745964,verilog,,,,sim_vga,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1576072120,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v,,blk_mem_gen_0,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v,1576745016,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v,,clkdiv,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v,1576815561,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vga.v,,seg,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vga.v,1576827562,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v,,vga,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v,1576827545,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v,,vgaRGB,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
+G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v,1576827251,verilog,,G:/2019fall_digital_design_project/VGA2.srcs/sim_1/new/sim_vga.v,,vgaSync,,,../../../../VGA2.srcs/sources_1/ip/clk_VGA,,,,,
