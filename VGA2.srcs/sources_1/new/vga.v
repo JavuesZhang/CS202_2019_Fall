@@ -11,6 +11,8 @@ wire [9:0] vc;
 //frequency divider 
 clkdiv clock(
     .clk(clk),
+    .rst(rst),
+    .div_choice(choice),
     .mclk(mclk)
 );
 // use ipcore
