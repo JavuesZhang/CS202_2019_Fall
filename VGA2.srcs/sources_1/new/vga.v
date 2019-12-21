@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module vga(input wire clk, rst, input [1:0] choice,
+module vga(input wire clk, rst, input [1:0] choice, input [4:0] image_mode,
     output wire [3:0] r, g, b, output wire hs, vs, output [7:0] DIG, Y
 );
 wire mclk;
@@ -36,6 +36,7 @@ vgaRGB rgb(
     .videoen(ven),
     .mclk(mclk),
     .choice(choice),
+    .image_mode(image_mode),
     .r(r),
     .g(g),
     .b(b)
