@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Sat Dec 21 15:16:54 2019
+| Date             : Sat Dec 21 18:09:32 2019
 | Host             : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command          : report_power -file vga_power_routed.rpt -pb vga_power_summary_routed.pb -rpx vga_power_routed.rpx
 | Design           : vga
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.489        |
+| Total On-Chip Power (W)  | 0.490        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.389        |
+| Dynamic (W)              | 0.390        |
 | Device Static (W)        | 0.100        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 83.7         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |       11 |       --- |             --- |
-| Slice Logic    |     0.010 |     3568 |       --- |             --- |
-|   LUT as Logic |     0.008 |     2430 |     63400 |            3.83 |
-|   CARRY4       |     0.002 |      629 |     15850 |            3.97 |
-|   Register     |    <0.001 |      129 |    126800 |            0.10 |
-|   F7/F8 Muxes  |    <0.001 |       57 |     63400 |            0.09 |
-|   Others       |     0.000 |      151 |       --- |             --- |
-| Signals        |     0.011 |     3165 |       --- |             --- |
+| Clocks         |     0.006 |       11 |       --- |             --- |
+| Slice Logic    |     0.011 |     4154 |       --- |             --- |
+|   LUT as Logic |     0.009 |     2832 |     63400 |            4.47 |
+|   CARRY4       |     0.002 |      736 |     15850 |            4.64 |
+|   Register     |    <0.001 |      139 |    126800 |            0.11 |
+|   F7/F8 Muxes  |    <0.001 |       54 |     63400 |            0.09 |
+|   Others       |     0.000 |      145 |       --- |             --- |
+| Signals        |     0.012 |     3548 |       --- |             --- |
 | Block RAM      |     0.003 |     49.5 |       135 |           36.67 |
 | MMCM           |     0.343 |        3 |         6 |           50.00 |
-| DSPs           |     0.002 |        5 |       240 |            2.08 |
+| DSPs           |    <0.001 |        2 |       240 |            0.83 |
 | I/O            |     0.016 |       41 |       285 |           14.39 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.489 |          |           |                 |
+| Total          |     0.490 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.048 |       0.031 |      0.017 |
+| Vccint    |       1.000 |     0.049 |       0.032 |      0.017 |
 | Vccaux    |       1.800 |     0.209 |       0.191 |      0.018 |
 | Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -150,7 +150,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| vga                                            |     0.389 |
+| vga                                            |     0.390 |
 |   clock                                        |     0.345 |
 |     clk_25                                     |     0.115 |
 |       inst                                     |     0.115 |
@@ -158,7 +158,7 @@ Table of Contents
 |       inst                                     |     0.115 |
 |     clk_45                                     |     0.115 |
 |       inst                                     |     0.115 |
-|   rgb                                          |     0.016 |
+|   rgb                                          |     0.015 |
 |     ROM0                                       |     0.004 |
 |       U0                                       |     0.004 |
 |         inst_blk_mem_gen                       |     0.004 |
@@ -255,7 +255,7 @@ Table of Contents
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |   seg                                          |     0.002 |
-|   syn                                          |     0.002 |
+|   syn                                          |     0.004 |
 +------------------------------------------------+-----------+
 
 

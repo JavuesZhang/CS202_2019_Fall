@@ -10,6 +10,9 @@ reg[11:0] data;
 reg [3:0]cases;
 reg [20:0]count;
 reg [10:0]shift;
+reg [7:0]color = 1;
+reg dir;
+reg switch;
 
 reg[10:0]h_visible_area;
 reg[10:0]h_sync_pulse;
@@ -68,13 +71,21 @@ blk_mem_gen_0 ROM0( .clka(mclk), .addra(addr), .douta(data_o) );
 
 //frequency divider for color bars
 always @ (posedge mclk)begin
-    if(count<1000000)count<=count+1;
-    else count<=0;
+if(switch==1)begin
+    if(count<1000000)   count<=count+1;
+    else                count<=0;
     if(count==1)
     begin
-        if(shift<h_visible_area)shift<=shift+1;
-        else shift<=0;
+        if(shift<h_visible_area)
+            shift<=shift+1;
+        else 
+            shift<=0;
+        if(color==14)  dir<=1;
+        if(color==1)   dir<=0;
+        if(dir==1)     color<=color-1;
+        if(dir==0)     color<=color+1;
     end
+end
 end
 
 always @ (posedge mclk)
@@ -84,40 +95,21 @@ begin
     begin
         if(mode==0)
         begin
-            if(advance==0)
-            begin
-                cases=(hc-h_sync_pulse-h_back_porch-1)*8/(h_visible_area);
-                case (cases) 
-                0:data=12'h000;
-                1:data=12'hfff;
-                2:data=12'hf00;
-                3:data='h0f0;
-                4:data='h00f;
-                5:data='h0ff;
-                6:data='hf0f;
-                7:data='hff0;
-                
-                endcase
-            end
-            if(advance==1)
-            begin
-                cases=((hc-h_sync_pulse-h_back_porch-1+shift)*8/(h_visible_area))%8;
-                   case (cases) 
-                   0:data=12'h000;
-                   1:data=12'hfff;
-                   2:data=12'hf00;
-                   3:data='h0f0;
-                   4:data='h00f;
-                   5:data='h0ff;
-                   6:data='hf0f;
-                   7:data='hff0;
-                   
-                   endcase
-                    r <= data[11:8];
-                    g <= data[7:4];
-                    b <= data[3:0];
-                end
-            end
+            if(advance==0)  switch<=0;
+            if(advance==1)  switch<=1;
+            cases=((hc-h_sync_pulse-h_back_porch-1+shift)*8/(h_visible_area))%8;
+            case (cases) 
+                0:data=12'h000+(color<<8)+(color<<4)+color;
+                1:data=12'hfff-(color<<8)-(color<<4)-color;
+                2:data=12'hf00-(color<<8)+(color<<4)+color;
+                3:data=12'h0f0+(color<<8)-(color<<4)+color;
+                4:data=12'h00f+(color<<8)+(color<<4)-color;
+                5:data=12'h0ff+(color<<8)-(color<<4)-color;
+                6:data=12'hf0f-(color<<8)+(color<<4)-color;
+                7:data=12'hff0-(color<<8)-(color<<4)+color;
+            endcase
+        end
+
         if(mode==1)
         begin
             if(advance==0) 
@@ -152,29 +144,30 @@ begin
                     addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
                     + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
                 end
-                else if(image_mode == 5'b01000)//fit
+                else if(image_mode == 5'b01000)//fill
                 begin
-                    if(h_visible_area/384>v_visible_area/384)
+                    if(h_visible_area>v_visible_area)
                         //通过vc、hc计算出地址并获取图片对应位置RGB
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch) + (h_visible_area-v_visible_area)/2) / v_visible_area * 384 
                         + 384 * (hc - (h_sync_pulse + h_back_porch))/ v_visible_area;
-                    else
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / h_visible_area * 384 
+                    if(h_visible_area<v_visible_area)
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)+ (v_visible_area-384)/2) / h_visible_area * 384 
                         + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
                 end
-                else if(image_mode == 5'b10000)//fill
+                else if(image_mode == 5'b10000)//fit
                 begin
-                    if(h_visible_area/384>v_visible_area/384)
+                    if(h_visible_area>v_visible_area
+                    && hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2>0)
                         //通过vc、hc计算出地址并获取图片对应位置RGB      
                         addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / h_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
-                    else
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ v_visible_area;
+                        + 384 * (hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2)/ h_visible_area;
+                    if(h_visible_area<v_visible_area
+                    && vc - (v_sync_pulse + v_back_porch) - (v_visible_area-h_visible_area)/2>0)
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch) - (v_visible_area-h_visible_area)/2) / v_visible_area * 384 
+                        + 384 * (hc - (h_sync_pulse + h_back_porch)) / v_visible_area;
                 end
                 else
                 begin
-
                     data = 12'hfff;
                 end
             end    
