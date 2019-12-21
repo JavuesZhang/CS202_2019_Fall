@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date                      : Sat Dec 21 10:50:13 2019
+| Date                      : Sat Dec 21 14:15:00 2019
 | Host                      : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command                   : report_io -file vga_io_placed.rpt
 | Design                    : vga
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            39 |
+|            41 |
 +---------------+
 
 
@@ -503,8 +503,8 @@ Table of Contents
 | Y4         |               | High Range | IO_L11P_T1_SRCC_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y5         |               |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | Y6         | image_mode[0] | High Range | IO_L18P_T2_34                | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| Y7         |               | High Range | IO_L23N_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| Y8         |               | High Range | IO_L23P_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| Y7         | mode          | High Range | IO_L23N_T3_34                | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| Y8         | advance       | High Range | IO_L23P_T3_34                | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y9         | choice[1]     | High Range | IO_L24N_T3_34                | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y10        |               | High Range | VCCO_13                      | VCCO          |             |      13 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | Y11        |               | High Range | IO_L11P_T1_SRCC_13           | User IO       |             |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

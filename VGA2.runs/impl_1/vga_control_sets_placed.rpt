@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Dec 21 10:50:13 2019
+| Date         : Sat Dec 21 14:15:00 2019
 | Host         : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file vga_control_sets_placed.rpt
 | Design       : vga
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    39 |
+| Number of unique control sets                            |    11 |
+| Unused register locations in slices containing registers |    53 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,37 +33,42 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               9 |            8 |
-| No           | No                    | Yes                    |              36 |           15 |
-| No           | Yes                   | No                     |              23 |           19 |
-| Yes          | No                    | No                     |              18 |            7 |
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |              36 |           16 |
+| No           | Yes                   | No                     |              32 |           12 |
+| Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              11 |            5 |
+| Yes          | Yes                   | No                     |              46 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------+---------------------+------------------+----------------+
-|  Clock Signal  | Enable Signal |   Set/Reset Signal  | Slice Load Count | Bel Load Count |
-+----------------+---------------+---------------------+------------------+----------------+
-|  seg/clkout    |               | seg/cnt[31]_i_2_n_0 |                1 |              3 |
-|  mclk_BUFG     |               |                     |                8 |              9 |
-|  mclk_BUFG     |               | syn/SR[0]           |               10 |             11 |
-|  mclk_BUFG     | syn/vsenable  | syn/vc[10]_i_1_n_0  |                5 |             11 |
-|  mclk_BUFG     |               | syn/r_reg[3]        |                9 |             12 |
-|  mclk_BUFG     | syn/E[0]      |                     |                7 |             18 |
-|  clk_IBUF_BUFG |               | seg/cnt[31]_i_2_n_0 |               14 |             33 |
-+----------------+---------------+---------------------+------------------+----------------+
++----------------+--------------------+-----------------------+------------------+----------------+
+|  Clock Signal  |    Enable Signal   |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
++----------------+--------------------+-----------------------+------------------+----------------+
+|  mclk_BUFG     |                    |                       |                1 |              1 |
+|  seg/clkout    |                    | seg/cnt[31]_i_2_n_0   |                1 |              3 |
+|  mclk_BUFG     | syn/data_reg[11]_0 | syn/data_reg[11]      |                1 |              4 |
+|  mclk_BUFG     | syn/data_reg[11]_0 | syn/data_reg[7]       |                2 |              4 |
+|  mclk_BUFG     | syn/data_reg[11]_0 | syn/data_reg[3]       |                1 |              4 |
+|  mclk_BUFG     |                    | syn/hc[10]_i_1_n_0    |                6 |             11 |
+|  mclk_BUFG     | rgb/shift          | rgb/shift[10]_i_1_n_0 |                4 |             11 |
+|  mclk_BUFG     | syn/vsenable       | syn/vc[10]_i_1_n_0    |                4 |             11 |
+|  mclk_BUFG     | rgb/r[3]_i_2_n_0   | syn/SR[0]             |                5 |             12 |
+|  mclk_BUFG     |                    | rgb/clear             |                6 |             21 |
+|  clk_IBUF_BUFG |                    | seg/cnt[31]_i_2_n_0   |               15 |             33 |
++----------------+--------------------+-----------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
+| 1      |                     1 |
 | 3      |                     1 |
-| 9      |                     1 |
-| 11     |                     2 |
+| 4      |                     3 |
+| 11     |                     3 |
 | 12     |                     1 |
 | 16+    |                     2 |
 +--------+-----------------------+

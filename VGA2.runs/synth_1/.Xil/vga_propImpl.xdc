@@ -77,3 +77,7 @@ set_property src_info {type:XDC file:1 line:81 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN AA6 [get_ports {image_mode[1]}]
 set_property src_info {type:XDC file:1 line:82 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y6 [get_ports {image_mode[0]}]
+set_property src_info {type:XDC file:1 line:86 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y8 [get_ports advance]
+set_property src_info {type:XDC file:1 line:87 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y7 [get_ports mode]

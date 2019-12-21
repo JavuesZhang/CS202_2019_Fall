@@ -125,7 +125,6 @@ begin
      vs = 1;  
 end
 // display time
-//511 -> 515 and 31 -> 35
 always @ (*)
 begin
   if((hc < h_visible_area + h_back_porch + h_sync_pulse) 

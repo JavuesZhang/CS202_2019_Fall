@@ -80,3 +80,8 @@ set_property PACKAGE_PIN AB7 [get_ports {image_mode[3]}]
 set_property PACKAGE_PIN V7 [get_ports {image_mode[2]}]
 set_property PACKAGE_PIN AA6 [get_ports {image_mode[1]}]
 set_property PACKAGE_PIN Y6 [get_ports {image_mode[0]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports advance]
+set_property IOSTANDARD LVCMOS33 [get_ports mode]
+set_property PACKAGE_PIN Y8 [get_ports advance]
+set_property PACKAGE_PIN Y7 [get_ports mode]
