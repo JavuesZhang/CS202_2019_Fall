@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Fri Dec 20 22:20:54 2019
+| Date             : Sat Dec 21 10:54:17 2019
 | Host             : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command          : report_power -file vga_power_routed.rpt -pb vga_power_summary_routed.pb -rpx vga_power_routed.rpx
 | Design           : vga
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.640        |
+| Total On-Chip Power (W)  | 0.608        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.539        |
+| Dynamic (W)              | 0.507        |
 | Device Static (W)        | 0.100        |
 | Effective TJA (C/W)      | 2.7          |
-| Max Ambient (C)          | 83.3         |
-| Junction Temperature (C) | 26.7         |
+| Max Ambient (C)          | 83.4         |
+| Junction Temperature (C) | 26.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.007 |       14 |       --- |             --- |
-| Slice Logic    |     0.002 |      735 |       --- |             --- |
-|   LUT as Logic |     0.002 |      383 |     63400 |            0.60 |
+| Slice Logic    |     0.007 |     1853 |       --- |             --- |
+|   LUT as Logic |     0.006 |     1115 |     63400 |            1.76 |
+|   CARRY4       |    <0.001 |      268 |     15850 |            1.69 |
+|   Register     |    <0.001 |       97 |    126800 |            0.08 |
 |   F7/F8 Muxes  |    <0.001 |       45 |     63400 |            0.07 |
-|   CARRY4       |    <0.001 |       52 |     15850 |            0.33 |
-|   Register     |    <0.001 |       79 |    126800 |            0.06 |
-|   Others       |     0.000 |      103 |       --- |             --- |
-| Signals        |     0.044 |      777 |       --- |             --- |
+|   Others       |     0.000 |      181 |       --- |             --- |
+| Signals        |     0.007 |     1690 |       --- |             --- |
 | Block RAM      |     0.006 |     49.5 |       135 |           36.67 |
 | MMCM           |     0.457 |        4 |         6 |           66.67 |
-| DSPs           |    <0.001 |        2 |       240 |            0.83 |
-| I/O            |     0.023 |       34 |       285 |           11.93 |
+| DSPs           |     0.002 |        4 |       240 |            1.67 |
+| I/O            |     0.022 |       39 |       285 |           13.68 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.640 |          |           |                 |
+| Total          |     0.608 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.077 |       0.060 |      0.017 |
-| Vccaux    |       1.800 |     0.273 |       0.254 |      0.018 |
-| Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |
+| Vccint    |       1.000 |     0.046 |       0.029 |      0.017 |
+| Vccaux    |       1.800 |     0.272 |       0.254 |      0.018 |
+| Vcco33    |       3.300 |     0.010 |       0.006 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -152,7 +152,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| vga                                            |     0.539 |
+| vga                                            |     0.507 |
 |   clock                                        |     0.460 |
 |     clk_25                                     |     0.115 |
 |       inst                                     |     0.115 |
@@ -162,14 +162,14 @@ Table of Contents
 |       inst                                     |     0.115 |
 |     clk_85                                     |     0.115 |
 |       inst                                     |     0.115 |
-|   rgb                                          |     0.052 |
-|     ROM0                                       |     0.010 |
-|       U0                                       |     0.010 |
-|         inst_blk_mem_gen                       |     0.010 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.010 |
-|             valid.cstr                         |     0.010 |
+|   rgb                                          |     0.016 |
+|     ROM0                                       |     0.007 |
+|       U0                                       |     0.007 |
+|         inst_blk_mem_gen                       |     0.007 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.007 |
+|             valid.cstr                         |     0.007 |
 |               bindec_a.bindec_inst_a           |    <0.001 |
-|               has_mux_a.A                      |     0.002 |
+|               has_mux_a.A                      |    <0.001 |
 |               ramloop[0].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[10].ram.r                |    <0.001 |
@@ -259,7 +259,7 @@ Table of Contents
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |   seg                                          |     0.002 |
-|   syn                                          |     0.001 |
+|   syn                                          |     0.005 |
 +------------------------------------------------+-----------+
 
 
