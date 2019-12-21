@@ -17,6 +17,9 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a100tfgg484-1
@@ -25,17 +28,17 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir G:/2019fall_digital_design_project/VGA2.cache/wt [current_project]
-set_property parent.project_path G:/2019fall_digital_design_project/VGA2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/ibm/VGA2/VGA2.cache/wt [current_project]
+set_property parent.project_path C:/Users/ibm/VGA2/VGA2.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo g:/2019fall_digital_design_project/VGA2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/ibm/VGA2/VGA2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xci
-set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_board.xdc]
-set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xdc]
-set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_ooc.xdc]
+read_ip -quiet c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xci
+set_property used_in_implementation false [get_files -all c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,7 +51,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 
-set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1 -new_name clk_VGA -ip [get_ips clk_VGA]]
+set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1 -new_name clk_VGA -ip [get_ips clk_VGA]]
 
 if { $cached_ip eq {} } {
 
@@ -87,32 +90,32 @@ write_checkpoint -force -noxdef clk_VGA.dcp
 create_report "clk_VGA_synth_1_synth_report_utilization_0" "report_utilization -file clk_VGA_utilization_synth.rpt -pb clk_VGA_utilization_synth.pb"
 
 if { [catch {
-  file copy -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA.dcp G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.dcp
+  file copy -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA.dcp c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v
+  write_verilog -force -mode synth_stub c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl
+  write_vhdl -force -mode synth_stub c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
+  write_verilog -force -mode funcsim c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -122,46 +125,46 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA.dcp G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.dcp
+  file copy -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA.dcp c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA_stub.v G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v
+  file rename -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA_stub.v c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA_stub.vhdl G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl
+  file rename -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA_stub.vhdl c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA_sim_netlist.v G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
+  file rename -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA_sim_netlist.v c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/2019fall_digital_design_project/VGA2.runs/clk_VGA_synth_1/clk_VGA_sim_netlist.vhdl G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.vhdl
+  file rename -force C:/Users/ibm/VGA2/VGA2.runs/clk_VGA_synth_1/clk_VGA_sim_netlist.vhdl c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir G:/2019fall_digital_design_project/VGA2.ip_user_files/ip/clk_VGA]} {
+if {[file isdir C:/Users/ibm/VGA2/VGA2.ip_user_files/ip/clk_VGA]} {
   catch { 
-    file copy -force G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v G:/2019fall_digital_design_project/VGA2.ip_user_files/ip/clk_VGA
+    file copy -force c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.v C:/Users/ibm/VGA2/VGA2.ip_user_files/ip/clk_VGA
   }
 }
 
-if {[file isdir G:/2019fall_digital_design_project/VGA2.ip_user_files/ip/clk_VGA]} {
+if {[file isdir C:/Users/ibm/VGA2/VGA2.ip_user_files/ip/clk_VGA]} {
   catch { 
-    file copy -force G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl G:/2019fall_digital_design_project/VGA2.ip_user_files/ip/clk_VGA
+    file copy -force c:/Users/ibm/VGA2/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_stub.vhdl C:/Users/ibm/VGA2/VGA2.ip_user_files/ip/clk_VGA
   }
 }

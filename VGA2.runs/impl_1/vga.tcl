@@ -60,104 +60,16 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
-
-start_step init_design
-set ACTIVE_STEP init_design
-set rc [catch {
-  create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
-  set_param synth.incrementalSynthesisCache C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9608-LAPTOP-69NJ2TNC/incrSyn
-  create_project -in_memory -part xc7a100tfgg484-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir G:/2019fall_digital_design_project/VGA2.cache/wt [current_project]
-  set_property parent.project_path G:/2019fall_digital_design_project/VGA2.xpr [current_project]
-  set_property ip_output_repo G:/2019fall_digital_design_project/VGA2.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet G:/2019fall_digital_design_project/VGA2.runs/synth_1/vga.dcp
-  read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xci
-  read_xdc G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc
-  link_design -top vga -part xc7a100tfgg484-1
-  close_msg_db -file init_design.pb
-} RESULT]
-if {$rc} {
-  step_failed init_design
-  return -code error $RESULT
-} else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force vga_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file vga_drc_opted.rpt -pb vga_drc_opted.pb -rpx vga_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  implement_debug_core 
-  place_design 
-  write_checkpoint -force vga_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file vga_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file vga_utilization_placed.rpt -pb vga_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file vga_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force vga_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file vga_drc_routed.rpt -pb vga_drc_routed.pb -rpx vga_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file vga_methodology_drc_routed.rpt -pb vga_methodology_drc_routed.pb -rpx vga_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file vga_power_routed.rpt -pb vga_power_summary_routed.pb -rpx vga_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file vga_route_status.rpt -pb vga_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file vga_timing_summary_routed.rpt -rpx vga_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file vga_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file vga_clock_utilization_routed.rpt"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force vga_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
-  unset ACTIVE_STEP 
-}
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_param xicom.use_bs_reader 1
+  open_checkpoint vga_routed.dcp
+  set_property webtalk.parent_dir C:/Users/lovec/VGA2/VGA2.cache/wt [current_project]
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   catch { write_mem_info -force vga.mmi }
   write_bitstream -force vga.bit 
   catch {write_debug_probes -quiet -force vga}

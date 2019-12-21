@@ -56,11 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _clk_25m____25.000______0.000______50.0______180.127____105.692
-// _clk_35m____35.500______0.000______50.0______168.018____105.692
-// _clk_36m____36.979______0.000______50.0______166.656____105.692
-// _clk_45m____46.711______0.000______50.0______159.052____105.692
-// _clk_85m____88.750______0.000______50.0______138.788____105.692
+// _clk_25m____25.000______0.000______50.0______181.828____104.359
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -69,16 +65,12 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "clk_VGA,clk_wiz_v5_4_3_0,{component_name=clk_VGA,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=5,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "clk_VGA,clk_wiz_v5_4_3_0,{component_name=clk_VGA,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module clk_VGA 
  (
   // Clock out ports
   output        clk_25m,
-  output        clk_35m,
-  output        clk_36m,
-  output        clk_45m,
-  output        clk_85m,
   // Status and control signals
   input         resetn,
  // Clock in ports
@@ -89,10 +81,6 @@ module clk_VGA
   (
   // Clock out ports  
   .clk_25m(clk_25m),
-  .clk_35m(clk_35m),
-  .clk_36m(clk_36m),
-  .clk_45m(clk_45m),
-  .clk_85m(clk_85m),
   // Status and control signals               
   .resetn(resetn), 
  // Clock in ports
