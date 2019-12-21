@@ -145,26 +145,15 @@ begin
                     + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
                 end
                 else if(image_mode == 5'b01000)//fill
-                begin
-                    if(h_visible_area>v_visible_area)
                         //通过vc、hc计算出地址并获取图片对应位置RGB
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch) + (h_visible_area-v_visible_area)/2) / v_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ v_visible_area;
-                    if(h_visible_area<v_visible_area)
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)+ (v_visible_area-384)/2) / h_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
-                end
-                else if(image_mode == 5'b10000)//fit
+                    addr <= 384 * (vc - (v_sync_pulse + v_back_porch) + (h_visible_area-v_visible_area)/2) / h_visible_area * 384 
+                    + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
+                else if(image_mode == 5'b10000
+                     && hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2>0
+                     && hc - (h_sync_pulse + h_back_porch) - (h_visible_area+v_visible_area)/2>0)//fit
                 begin
-                    if(h_visible_area>v_visible_area
-                    && hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2>0)
-                        //通过vc、hc计算出地址并获取图片对应位置RGB      
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / h_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2)/ h_visible_area;
-                    if(h_visible_area<v_visible_area
-                    && vc - (v_sync_pulse + v_back_porch) - (v_visible_area-h_visible_area)/2>0)
-                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch) - (v_visible_area-h_visible_area)/2) / v_visible_area * 384 
-                        + 384 * (hc - (h_sync_pulse + h_back_porch)) / v_visible_area;
+                    addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384
+                    + 384 * (hc - (h_sync_pulse + h_back_porch) - (h_visible_area-v_visible_area)/2)/ v_visible_area;
                 end
                 else
                 begin

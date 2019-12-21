@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Dec 21 18:02:40 2019
-# Process ID: 13432
+# Start of session at: Sat Dec 21 21:11:29 2019
+# Process ID: 7740
 # Current directory: G:/2019fall_digital_design_project/VGA2.runs/synth_1
 # Command line: vivado.exe -log vga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga.tcl
 # Log file: G:/2019fall_digital_design_project/VGA2.runs/synth_1/vga.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14576 
+INFO: Helper process launched with PID 18380 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 342.512 ; gain = 101.121
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 342.605 ; gain = 101.930
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'vga' [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vga.v:3]
 INFO: [Synth 8-638] synthesizing module 'clkdiv' [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v:25]
-INFO: [Synth 8-638] synthesizing module 'clk_VGA' [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/realtime/clk_VGA_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_VGA' (1#1) [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/realtime/clk_VGA_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clk_VGA' [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/realtime/clk_VGA_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_VGA' (1#1) [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/realtime/clk_VGA_stub.v:5]
 WARNING: [Synth 8-350] instance 'clk_25' of module 'clk_VGA' requires 7 connections, but only 3 given [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v:32]
 WARNING: [Synth 8-350] instance 'clk_36' of module 'clk_VGA' requires 7 connections, but only 3 given [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v:34]
 WARNING: [Synth 8-350] instance 'clk_45' of module 'clk_VGA' requires 7 connections, but only 3 given [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v:35]
@@ -35,8 +35,8 @@ INFO: [Synth 8-256] done synthesizing module 'clkdiv' (2#1) [G:/2019fall_digital
 INFO: [Synth 8-638] synthesizing module 'vgaSync' [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:3]
 INFO: [Synth 8-256] done synthesizing module 'vgaSync' (3#1) [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:3]
 INFO: [Synth 8-638] synthesizing module 'vgaRGB' [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:3]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (4#1) [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (4#1) [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/realtime/blk_mem_gen_0_stub.v:6]
 INFO: [Synth 8-155] case statement is not full and has no default [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:101]
 WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:93]
 WARNING: [Synth 8-6014] Unused sequential element cases_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:100]
@@ -54,7 +54,7 @@ WARNING: [Synth 8-567] referenced signal 'choice' should be on the sensitivity l
 INFO: [Synth 8-256] done synthesizing module 'seg' (6#1) [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v:3]
 INFO: [Synth 8-256] done synthesizing module 'vga' (7#1) [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vga.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 394.844 ; gain = 153.453
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 394.961 ; gain = 154.285
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -64,26 +64,26 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 394.844 ; gain = 153.453
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 394.961 ; gain = 154.285
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp2/blk_mem_gen_0_in_context.xdc] for cell 'rgb/ROM0'
-Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp2/blk_mem_gen_0_in_context.xdc] for cell 'rgb/ROM0'
-Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_25'
-Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_25'
-Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_36'
-WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
-Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_36'
-Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_45'
-WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
-Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_45'
-Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_85'
-WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
-Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_85'
+Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp2/blk_mem_gen_0_in_context.xdc] for cell 'rgb/ROM0'
+Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp2/blk_mem_gen_0_in_context.xdc] for cell 'rgb/ROM0'
+Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_25'
+Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_25'
+Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_36'
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
+Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_36'
+Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_45'
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
+Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_45'
+Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_85'
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc:1]
+Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc] for cell 'clock/clk_85'
 Parsing XDC File [G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc]
 Finished Parsing XDC File [G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_propImpl.xdc].
@@ -93,30 +93,30 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 754.438 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 755.023 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'rgb/ROM0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 754.438 ; gain = 513.047
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 755.023 ; gain = 514.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 754.438 ; gain = 513.047
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 755.023 ; gain = 514.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc, line 7).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-13432-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  G:/2019fall_digital_design_project/VGA2.runs/synth_1/.Xil/Vivado-7740-LAPTOP-69NJ2TNC/dcp3/clk_VGA_in_context.xdc, line 8).
 Applied set_property DONT_TOUCH = true for clock/clk_25. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock/clk_36. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock/clk_45. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock/clk_85. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for rgb/ROM0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 754.438 ; gain = 513.047
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 755.023 ; gain = 514.348
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:132]
 INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:130]
@@ -125,16 +125,11 @@ INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to lo
 INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:130]
 WARNING: [Synth 8-6014] Unused sequential element hc_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:82]
 WARNING: [Synth 8-6014] Unused sequential element vc_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:109]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:164]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:164]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:153]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:153]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:147]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:147]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:141]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:141]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:131]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:131]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:125]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:70]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:86]
 INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:133]
 INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:132]
@@ -158,7 +153,7 @@ INFO: [Synth 8-5544] ROM "DIG_r" won't be mapped to Block RAM because address si
 INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 754.438 ; gain = 513.047
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 755.023 ; gain = 514.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -173,15 +168,16 @@ Detailed RTL Component Info :
 +---Adders : 
 	   3 Input     33 Bit       Adders := 4     
 	   5 Input     32 Bit       Adders := 3     
-	   2 Input     32 Bit       Adders := 9     
-	   3 Input     32 Bit       Adders := 4     
 	   4 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 8     
 	   2 Input     18 Bit       Adders := 1     
-	   4 Input     18 Bit       Adders := 1     
+	   4 Input     18 Bit       Adders := 2     
 	   3 Input     18 Bit       Adders := 1     
 	   5 Input     12 Bit       Adders := 1     
 	   3 Input     12 Bit       Adders := 2     
 	   4 Input     12 Bit       Adders := 7     
+	   2 Input     12 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 3     
 	   3 Input     11 Bit       Adders := 1     
 	   3 Input     10 Bit       Adders := 1     
@@ -199,16 +195,15 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Multipliers : 
-	                 9x32  Multipliers := 6     
+	                 9x32  Multipliers := 4     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
-	   2 Input     18 Bit        Muxes := 10    
+	   2 Input     18 Bit        Muxes := 11    
 	   3 Input     18 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 4     
-	   4 Input     12 Bit        Muxes := 1     
-	   3 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 6     
+	   3 Input     12 Bit        Muxes := 2     
 	   4 Input     11 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 3     
 	   4 Input     10 Bit        Muxes := 2     
 	   4 Input      8 Bit        Muxes := 4     
 	   9 Input      8 Bit        Muxes := 1     
@@ -218,8 +213,9 @@ Detailed RTL Component Info :
 	   4 Input      6 Bit        Muxes := 2     
 	   4 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -257,14 +253,15 @@ Detailed RTL Component Info :
 +---Adders : 
 	   3 Input     33 Bit       Adders := 4     
 	   5 Input     32 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 8     
-	   3 Input     32 Bit       Adders := 4     
 	   4 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 7     
 	   2 Input     18 Bit       Adders := 1     
-	   4 Input     18 Bit       Adders := 1     
+	   4 Input     18 Bit       Adders := 2     
 	   3 Input     18 Bit       Adders := 1     
 	   3 Input     12 Bit       Adders := 1     
 	   4 Input     12 Bit       Adders := 7     
+	   2 Input     12 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 1     
 	   3 Input     10 Bit       Adders := 1     
 	   3 Input      9 Bit       Adders := 1     
@@ -278,21 +275,20 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 2     
 +---Multipliers : 
-	                 9x32  Multipliers := 6     
+	                 9x32  Multipliers := 4     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 10    
+	   2 Input     18 Bit        Muxes := 11    
 	   3 Input     18 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 4     
-	   4 Input     12 Bit        Muxes := 1     
-	   3 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 6     
+	   3 Input     12 Bit        Muxes := 2     
 	   4 Input     11 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 3     
 	   4 Input     10 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 2     
 	   4 Input      6 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 12    
-	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
 Module seg 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -333,12 +329,14 @@ INFO: [Synth 8-5546] ROM "color" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:75]
 WARNING: [Synth 8-6014] Unused sequential element shift_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:79]
 WARNING: [Synth 8-6014] Unused sequential element color_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v:83]
-DSP Report: Generating DSP p_1_out, operation Mode is: C+A*(B:0x180)+CarryIn.
-DSP Report: operator p_1_out is absorbed into DSP p_1_out.
-DSP Report: operator p_0_out is absorbed into DSP p_1_out.
-DSP Report: Generating DSP addr0, operation Mode is: C+A*(B:0x180).
-DSP Report: operator addr0 is absorbed into DSP addr0.
-DSP Report: operator addr1 is absorbed into DSP addr0.
+DSP Report: Generating DSP addr1, operation Mode is: A*(B:0x180).
+DSP Report: operator addr1 is absorbed into DSP addr1.
+DSP Report: Generating DSP addr1, operation Mode is: A*(B:0x180).
+DSP Report: operator addr1 is absorbed into DSP addr1.
+DSP Report: Generating DSP addr1, operation Mode is: A*(B:0x180).
+DSP Report: operator addr1 is absorbed into DSP addr1.
+DSP Report: Generating DSP addr1, operation Mode is: A*(B:0x180).
+DSP Report: operator addr1 is absorbed into DSP addr1.
 INFO: [Synth 8-5545] ROM "seg/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "seg/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element syn/hc_reg was removed.  [G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v:82]
@@ -346,19 +344,21 @@ WARNING: [Synth 8-6014] Unused sequential element syn/vc_reg was removed.  [G:/2
 WARNING: [Synth 8-3917] design vga has port DIG[3] driven by constant 1
 WARNING: [Synth 8-3917] design vga has port Y[7] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 754.438 ; gain = 513.047
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 755.023 ; gain = 514.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping  Report (see note below)
-+------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|vgaRGB      | C+A*(B:0x180)+CarryIn | 18     | 9      | 11     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|vgaRGB      | C+A*(B:0x180)         | 18     | 9      | 11     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-+------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|vgaRGB      | A*(B:0x180) | 18     | 9      | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vgaRGB      | A*(B:0x180) | 18     | 9      | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vgaRGB      | A*(B:0x180) | 18     | 9      | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vgaRGB      | A*(B:0x180) | 18     | 9      | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -398,13 +398,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clock/clk_85/clk_45m' to 
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clock/clk_85/clk_85m' to pin 'clock/clk_85/bbstub_clk_85m/O'
 INFO: [Synth 8-5819] Moved 20 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 820.574 ; gain = 579.184
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 812.207 ; gain = 571.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 964.262 ; gain = 722.871
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 909.945 ; gain = 669.270
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -416,7 +416,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -440,7 +440,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -453,7 +453,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -465,25 +465,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -507,39 +507,38 @@ Report Cell Usage:
 |4     |clk_VGA__2    |     1|
 |5     |clk_VGA__3    |     1|
 |6     |BUFG          |     1|
-|7     |CARRY4        |   911|
-|8     |DSP48E1_1     |     2|
-|9     |LUT1          |   516|
-|10    |LUT2          |  1155|
-|11    |LUT3          |  1252|
-|12    |LUT4          |   719|
-|13    |LUT5          |   148|
-|14    |LUT6          |   168|
-|15    |MUXF7         |     9|
-|16    |FDCE          |    36|
-|17    |FDRE          |    95|
-|18    |IBUF          |    10|
-|19    |OBUF          |    30|
+|7     |CARRY4        |   576|
+|8     |DSP48E1       |     4|
+|9     |LUT1          |   258|
+|10    |LUT2          |   806|
+|11    |LUT3          |   666|
+|12    |LUT4          |   559|
+|13    |LUT5          |   144|
+|14    |LUT6          |   190|
+|15    |FDCE          |    36|
+|16    |FDRE          |    95|
+|17    |IBUF          |    10|
+|18    |OBUF          |    30|
 +------+--------------+------+
 
 Report Instance Areas: 
 +------+---------+--------+------+
 |      |Instance |Module  |Cells |
 +------+---------+--------+------+
-|1     |top      |        |  5084|
+|1     |top      |        |  3407|
 |2     |  clock  |clkdiv  |    21|
-|3     |  rgb    |vgaRGB  |  2425|
+|3     |  rgb    |vgaRGB  |  1536|
 |4     |  seg    |seg     |   102|
-|5     |  syn    |vgaSync |   837|
+|5     |  syn    |vgaSync |   695|
 +------+---------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 968.316 ; gain = 726.926
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 968.316 ; gain = 367.332
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 968.316 ; gain = 726.926
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 912.117 ; gain = 311.379
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.117 ; gain = 671.441
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 932 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 590 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
@@ -548,10 +547,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-97 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+92 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 968.316 ; gain = 738.398
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 912.117 ; gain = 681.703
 INFO: [Common 17-1381] The checkpoint 'G:/2019fall_digital_design_project/VGA2.runs/synth_1/vga.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file vga_utilization_synth.rpt -pb vga_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 968.316 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Dec 21 18:03:37 2019...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 912.117 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 21 21:12:22 2019...
