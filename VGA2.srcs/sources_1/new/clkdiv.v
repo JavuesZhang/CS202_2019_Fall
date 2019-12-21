@@ -40,7 +40,7 @@ module clkdiv(input wire clk, rst, input[1:0] div_choice,
         2'b00: mclk = out_clk1;
         2'b01: mclk = out_clk2;
         2'b10: mclk = out_clk3;
-        2'b11: mclk = out_clk4;
+        2'b11: mclk = clk;
         endcase
     end
         

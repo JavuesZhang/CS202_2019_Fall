@@ -79,10 +79,14 @@ end
 
 always @ (posedge mclk)
 begin
-    if(videoen == 1)begin
-        if(mode==0)begin
-            if(advance==0)begin
-            cases=(hc-h_sync_pulse-h_back_porch-1)*8/(h_visible_area);
+    data = data_o;
+    if(videoen == 1)
+    begin
+        if(mode==0)
+        begin
+            if(advance==0)
+            begin
+                cases=(hc-h_sync_pulse-h_back_porch-1)*8/(h_visible_area);
                 case (cases) 
                 0:data=12'h000;
                 1:data=12'hfff;
@@ -94,11 +98,9 @@ begin
                 7:data='hff0;
                 
                 endcase
-                 r <= data[11:8];
-                 g <= data[7:4];
-                 b <= data[3:0];
             end
-            if(advance==1)begin
+            if(advance==1)
+            begin
                 cases=((hc-h_sync_pulse-h_back_porch-1+shift)*8/(h_visible_area))%8;
                    case (cases) 
                    0:data=12'h000;
@@ -116,53 +118,77 @@ begin
                     b <= data[3:0];
                 end
             end
-        if(mode==1)begin
-            if(advance==0) begin
-                   if(image_mode == 5'b00000
-                   && vc < 384 + v_sync_pulse + v_back_porch 
-                   && hc < 384 + h_sync_pulse + h_back_porch)//normal display
-                       begin
-                      //通过vc、hc计算出地址并获取图片对应位置RGB      
-                       addr <= (vc - (v_sync_pulse + v_back_porch)) * 384
-                            + (hc - (h_sync_pulse + h_back_porch));
-                       end
-                  else if(image_mode == 5'b00001)//tile
-                       begin
-                       //通过vc、hc计算出地址并获取图片对应位置RGB      
-                       addr <= (vc - (v_sync_pulse + v_back_porch)) % 384 * 384
-                             + (hc - (h_sync_pulse + h_back_porch)) % 384;
-                       end
-                  else if(image_mode == 5'b00010
-                       && vc < 384 + v_sync_pulse + v_back_porch + (v_visible_area-384)/2
-                       && vc > v_sync_pulse + v_back_porch + (v_visible_area-384)/2
-                       && hc < 384 + h_sync_pulse + h_back_porch + (h_visible_area-384)/2
-                       && hc > h_sync_pulse + h_back_porch + (h_visible_area-384)/2)//center
-                       begin
-                       //通过vc、hc计算出地址并获取图片对应位置RGB      
-                       addr <= (vc - (v_sync_pulse + v_back_porch + (v_visible_area-384)/2)) * 384
-                             + (hc - (h_sync_pulse + h_back_porch + (h_visible_area-384)/2));
-                        end
-                   else if(image_mode == 5'b00100)//stretch
-                        begin
-                        //通过vc、hc计算出地址并获取图片对应位置RGB      
+        if(mode==1)
+        begin
+            if(advance==0) 
+            begin
+                if(image_mode == 5'b00000
+                && vc < 384 + v_sync_pulse + v_back_porch 
+                && hc < 384 + h_sync_pulse + h_back_porch)//normal display
+                begin
+                    //通过vc、hc计算出地址并获取图片对应位置RGB      
+                    addr <= (vc - (v_sync_pulse + v_back_porch)) * 384
+                    + (hc - (h_sync_pulse + h_back_porch));
+                end
+                else if(image_mode == 5'b00001)//tile
+                begin
+                    //通过vc、hc计算出地址并获取图片对应位置RGB      
+                    addr <= (vc - (v_sync_pulse + v_back_porch)) % 384 * 384
+                    + (hc - (h_sync_pulse + h_back_porch)) % 384;
+                end
+                else if(image_mode == 5'b00010
+                && vc < 384 + v_sync_pulse + v_back_porch + (v_visible_area-384)/2
+                && vc > v_sync_pulse + v_back_porch + (v_visible_area-384)/2
+                && hc < 384 + h_sync_pulse + h_back_porch + (h_visible_area-384)/2
+                && hc > h_sync_pulse + h_back_porch + (h_visible_area-384)/2)//center
+                begin
+                    //通过vc、hc计算出地址并获取图片对应位置RGB      
+                    addr <= (vc - (v_sync_pulse + v_back_porch + (v_visible_area-384)/2)) * 384
+                    + (hc - (h_sync_pulse + h_back_porch + (h_visible_area-384)/2));
+                end
+                else if(image_mode == 5'b00100)//stretch
+                begin
+                    //通过vc、hc计算出地址并获取图片对应位置RGB      
+                    addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
+                    + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
+                end
+                else if(image_mode == 5'b01000)//fit
+                begin
+                    if(h_visible_area/384>v_visible_area/384)
+                        //通过vc、hc计算出地址并获取图片对应位置RGB
                         addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
-                              + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
-                        end
-                   else 
-                   begin
-                       data = 12'hfff;
-                   end
-                 end    
-            if(advance==1)begin
-            end
+                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ v_visible_area;
+                    else
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / h_visible_area * 384 
+                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
+                end
+                else if(image_mode == 5'b10000)//fill
+                begin
+                    if(h_visible_area/384>v_visible_area/384)
+                        //通过vc、hc计算出地址并获取图片对应位置RGB      
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / h_visible_area * 384 
+                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ h_visible_area;
+                    else
+                        addr <= 384 * (vc - (v_sync_pulse + v_back_porch)) / v_visible_area * 384 
+                        + 384 * (hc - (h_sync_pulse + h_back_porch))/ v_visible_area;
+                end
+                else
+                begin
+
+                    data = 12'hfff;
+                end
             end    
-           end
-  else
-    begin
-       r <= 0;
-        g <= 0;
-        b <= 0;
-     end
+            if(advance==1)
+            begin
+                
+            end
+        end    
+    end 
+    else
+        data = 12'h0;
+        r <= data[11:8];
+        g <= data[7:4];
+        b <= data[3:0];
 end
 
 endmodule
