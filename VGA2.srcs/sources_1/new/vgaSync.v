@@ -127,10 +127,10 @@ end
 // display time
 always @ (*)
 begin
-  if((hc < h_visible_area + h_back_porch + h_sync_pulse) 
-  && (hc >= h_back_porch + h_sync_pulse)
-  && (vc < v_visible_area + v_back_porch + v_sync_pulse) 
-  && (vc >= v_back_porch + v_sync_pulse))
+  if(hc < h_visible_area + h_back_porch + h_sync_pulse
+  &&  hc >= h_back_porch + h_sync_pulse
+  &&  vc < v_visible_area + v_back_porch + v_sync_pulse
+  &&  vc >= v_back_porch + v_sync_pulse)
     videoen = 1;
   else
     videoen = 0;

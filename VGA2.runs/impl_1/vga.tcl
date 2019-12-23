@@ -68,7 +68,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
-  set_param synth.incrementalSynthesisCache C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9608-LAPTOP-69NJ2TNC/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15456-LAPTOP-69NJ2TNC/incrSyn
   create_project -in_memory -part xc7a100tfgg484-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -80,6 +80,7 @@ set rc [catch {
   add_files -quiet G:/2019fall_digital_design_project/VGA2.runs/synth_1/vga.dcp
   read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xci
+  read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
   read_xdc G:/2019fall_digital_design_project/VGA2.srcs/constrs_1/new/vga_con.xdc
   link_design -top vga -part xc7a100tfgg484-1
   close_msg_db -file init_design.pb

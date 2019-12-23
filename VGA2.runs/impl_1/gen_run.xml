@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1576933887">
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1577116067">
   <File Type="PWROPT-DCP" Name="vga_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="vga_power_routed.rpt"/>
   <File Type="PA-TCL" Name="vga.tcl"/>
@@ -79,6 +79,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/vgaRGB.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -139,4 +146,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_VGA"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_1"/>
 </GenRun>

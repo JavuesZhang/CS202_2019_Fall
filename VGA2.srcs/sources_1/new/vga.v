@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module vga(input wire clk, rst, mode, advance, input [1:0] choice, input [4:0] image_mode,
+module vga(input wire clk, rst,usbin, mode, advance, input [1:0] choice, input [4:0] image_mode, band_mode,
     output wire [3:0] r, g, b, output wire hs, vs, output [7:0] DIG, Y
 );
 wire mclk;
@@ -33,10 +33,14 @@ vgaSync syn(
 vgaRGB rgb(
     .hc(hc),
     .vc(vc),
+    .rst(rst),
+    .usbin(usbin),
     .videoen(ven),
     .mclk(mclk),
+    .clk(clk),
     .choice(choice),
     .image_mode(image_mode),
+    .band_mode(band_mode),
     .r(r),
     .g(g),
     .b(b),

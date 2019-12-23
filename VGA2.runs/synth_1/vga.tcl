@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_param synth.incrementalSynthesisCache C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9608-LAPTOP-69NJ2TNC/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/lenovo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15456-LAPTOP-69NJ2TNC/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tfgg484-1
@@ -37,6 +37,7 @@ add_files G:/2019fall_digital_design_project/VGA2.srcs/Lenna.png.coe
 read_verilog -library xil_defaultlib {
   G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/clkdiv.v
   G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/seg.v
+  G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/uart_rx.v
   G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaRGB.v
   G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vgaSync.v
   G:/2019fall_digital_design_project/VGA2.srcs/sources_1/new/vga.v
@@ -48,6 +49,9 @@ read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA
 set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_board.xdc]
 set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA.xdc]
 set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/clk_VGA/clk_VGA_ooc.xdc]
+
+read_ip -quiet G:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
+set_property used_in_implementation false [get_files -all g:/2019fall_digital_design_project/VGA2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

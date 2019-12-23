@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Dec 21 21:12:22 2019
+| Date         : Mon Dec 23 23:48:45 2019
 | Host         : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file vga_utilization_synth.rpt -pb vga_utilization_synth.pb
 | Design       : vga
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 2257 |     0 |     63400 |  3.56 |
-|   LUT as Logic          | 2257 |     0 |     63400 |  3.56 |
+| Slice LUTs*             | 2430 |     0 |     63400 |  3.83 |
+|   LUT as Logic          | 2430 |     0 |     63400 |  3.83 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  131 |     0 |    126800 |  0.10 |
-|   Register as Flip Flop |  131 |     0 |    126800 |  0.10 |
+| Slice Registers         |  232 |     0 |    126800 |  0.18 |
+|   Register as Flip Flop |  232 |     0 |    126800 |  0.18 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 36    |          Yes |           - |        Reset |
+| 97    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 95    |          Yes |       Reset |            - |
+| 135   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,8 +80,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |    4 |     0 |       240 |  1.67 |
-|   DSP48E1 only |    4 |       |           |       |
+| DSPs           |    5 |     0 |       240 |  2.08 |
+|   DSP48E1 only |    5 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -91,7 +91,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   41 |     0 |       285 | 14.39 |
+| Bonded IOB                  |   47 |     0 |       285 | 16.49 |
 | Bonded IPADs                |    0 |     0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
@@ -150,18 +150,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  806 |                 LUT |
-| LUT3     |  666 |                 LUT |
-| CARRY4   |  576 |          CarryLogic |
-| LUT4     |  559 |                 LUT |
-| LUT1     |  258 |                 LUT |
-| LUT6     |  190 |                 LUT |
-| LUT5     |  144 |                 LUT |
-| FDRE     |   95 |        Flop & Latch |
-| FDCE     |   36 |        Flop & Latch |
+| LUT2     |  786 |                 LUT |
+| LUT3     |  777 |                 LUT |
+| CARRY4   |  608 |          CarryLogic |
+| LUT4     |  566 |                 LUT |
+| LUT6     |  282 |                 LUT |
+| LUT1     |  262 |                 LUT |
+| LUT5     |  177 |                 LUT |
+| FDRE     |  135 |        Flop & Latch |
+| FDCE     |   97 |        Flop & Latch |
 | OBUF     |   30 |                  IO |
-| IBUF     |   11 |                  IO |
-| DSP48E1  |    4 |    Block Arithmetic |
+| IBUF     |   17 |                  IO |
+| DSP48E1  |    5 |    Block Arithmetic |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -173,6 +173,7 @@ Table of Contents
 |    Ref Name   | Used |
 +---------------+------+
 | clk_VGA       |    4 |
+| blk_mem_gen_1 |    1 |
 | blk_mem_gen_0 |    1 |
 +---------------+------+
 
