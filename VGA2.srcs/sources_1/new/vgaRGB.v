@@ -1,7 +1,11 @@
 `timescale 1ns / 1ps
 
-module vgaRGB(input wire [10:0]hc, vc, input wire rst, usbin, clk, videoen, mclk, mode, advance,
-       input [1:0]choice, input [4:0]image_mode, band_mode, output reg [3:0] r, g, b
+module vgaRGB(
+    input wire [10:0]hc, vc, 
+    input wire rst, usbin, clk, videoen, mclk, mode, advance,
+    input [1:0]choice, 
+    input [4:0]image_mode, band_mode, 
+    output reg [3:0] r, g, b
     );
 
 reg [17:0] addr = 0;
@@ -89,69 +93,73 @@ reg[11:0]color8;
 
 always@*
 begin
-case(band_mode)
-4'b0001:
-begin
-color1=12'h100;
-color2=12'h300;
-color3=12'h500;
-color4=12'h700;
-color5=12'h900;
-color6=12'hb00;
-color7=12'hd00;
-color8=12'hf00;
-end
-4'b0010:
-begin
-color1=12'h010;
-color2=12'h030;
-color3=12'h050;
-color4=12'h070;
-color5=12'h090;
-color6=12'h0b0;
-color7=12'h0d0;
-color8=12'h0f0;
-end
-4'b0100:
-begin
-color1=12'h001;
-color2=12'h003;
-color3=12'h005;
-color4=12'h007;
-color5=12'h009;
-color6=12'h00b;
-color7=12'h00d;
-color8=12'h00f;
-end
-4'b1000:
-begin
-color1=12'h000;
-color2=12'h666;
-color3=12'h600;
-color4=12'h060;
-color5=12'h006;
-color6=12'h066;
-color7=12'h606;
-color8=12'h660;
-end
-default:
-begin
-color1=12'h000;
-color2=12'hfff;
-color3=12'hf00;
-color4=12'h0f0;
-color5=12'h00f;
-color6=12'h0ff;
-color7=12'hf0f;
-color8=12'hff0;
-end
-endcase
+    case(band_mode)
+    4'b0001:
+    begin
+        color1=12'h100;
+        color2=12'h300;
+        color3=12'h500;
+        color4=12'h700;
+        color5=12'h900;
+        color6=12'hb00;
+        color7=12'hd00;
+        color8=12'hf00;
+    end
+    4'b0010:
+    begin
+        color1=12'h010;
+        color2=12'h030;
+        color3=12'h050;
+        color4=12'h070;
+        color5=12'h090;
+        color6=12'h0b0;
+        color7=12'h0d0;
+        color8=12'h0f0;
+    end
+    4'b0100:
+    begin
+        color1=12'h001;
+        color2=12'h003;
+        color3=12'h005;
+        color4=12'h007;
+        color5=12'h009;
+        color6=12'h00b;
+        color7=12'h00d;
+        color8=12'h00f;
+    end
+    4'b1000:
+    begin
+        color1=12'h000;
+        color2=12'h666;
+        color3=12'h600;
+        color4=12'h060;
+        color5=12'h006;
+        color6=12'h066;
+        color7=12'h606;
+        color8=12'h660;
+    end
+    default:
+    begin
+        color1=12'h000;
+        color2=12'hfff;
+        color3=12'hf00;
+        color4=12'h0f0;
+        color5=12'h00f;
+        color6=12'h0ff;
+        color7=12'hf0f;
+        color8=12'hff0;
+    end
+    endcase
 end
 
 
 
 //ipºËµ÷ÓÃ
-blk_mem_gen_0 ROM0( .clka(mclk), .addra(addr), .douta(data_o1));
+blk_mem_gen_0 ROM0( 
+    .clka(mclk), 
+    .addra(addr), 
+    .douta(data_o1)
+    );
 reg [17:0] addro2 = 0;
 wire [11:0] data_o2;
 blk_mem_gen_1 ROM1(
@@ -162,7 +170,9 @@ blk_mem_gen_1 ROM1(
     .clkb(clk),
     .addrb(addro2),
     .doutb(data_o2)
-);
+    );
+
+//uart address
 always @ (posedge clk or negedge rst) 
 begin
     if(!rst)
@@ -172,7 +182,7 @@ begin
         addri <= addri + 1;
 end
 
-//frequency divider for color bars
+//frequency divider for color bands
 always @ (posedge mclk)begin
 if(switch==1)begin
     if(count<1000000)   count<=count+1;
@@ -191,6 +201,7 @@ if(switch==1)begin
 end
 end
 
+//main display controller
 always @ (posedge mclk)
 begin
     if(videoen == 1)
@@ -199,7 +210,8 @@ begin
         begin
             if(advance==0)  switch<=0;
             if(advance==1)  switch<=1;
-            cases=((hc-h_sync_pulse-h_back_porch+shift)*8/(h_visible_area))%8;
+            cases=((hc-h_sync_pulse-h_back_porch+shift)*8
+                  /(h_visible_area))%8;
             case (cases) 
                 0:data<=color1+(color<<8)+(color<<4)+color;
                 1:data<=color2-(color<<8)-(color<<4)-color;

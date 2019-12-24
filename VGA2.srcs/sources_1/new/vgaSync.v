@@ -1,7 +1,10 @@
 `timescale 1ns / 1ps
 
-module vgaSync(input wire clk, rst, input [1:0]choice,
-      output reg hs, vs, videoen, output reg [10:0]hc, vc
+module vgaSync(
+    input wire clk, rst, 
+    input [1:0]choice,
+    output reg hs, vs, videoen, 
+    output reg [10:0]hc, vc
     );   
 reg vsenable;
 // hc(horizontal counter): control the whole line

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon Dec 23 23:53:54 2019
+| Date         : Tue Dec 24 17:46:28 2019
 | Host         : LAPTOP-69NJ2TNC running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file vga_clock_utilization_routed.rpt
 | Design       : vga
@@ -57,7 +57,7 @@ Table of Contents
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+--------------------+---------------------------------+----------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock              | Driver Pin                      | Net                                    |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+--------------------+---------------------------------+----------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 4 |         235 |               0 |       21.408 | Multiple           | mclk_BUFG_inst/O                | mclk_BUFG                              |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 4 |         235 |               0 |       40.000 | Multiple           | mclk_BUFG_inst/O                | mclk_BUFG                              |
 | g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          |                 6 |         221 |               1 |              |                    | clk_IBUF_BUFG_inst/O            | clk_IBUF_BUFG                          |
 | g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 1 |           1 |               0 |       10.000 | clkfbout_clk_VGA   | clock/clk_25/inst/clkf_buf/O    | clock/clk_25/inst/clkfbout_buf_clk_VGA |
 | g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y4 | n/a          |                 1 |           1 |               0 |       10.000 | clkfbout_clk_VGA_1 | clock/clk_36/inst/clkf_buf/O    | clock/clk_36/inst/clkfbout_buf_clk_VGA |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+--------------------+------------------------------------------+------------------------------------+
 | Source Id | Global Id | Driver Type/Pin     | Constraint | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock       | Driver Pin                               | Net                                |
 +-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+--------------------+------------------------------------------+------------------------------------+
-| src0      | g0        | LUT6/O              | None       | SLICE_X52Y96    | X1Y1         |           1 |               0 |              21.408 | Multiple           | clock/mclk_BUFG_inst_i_1/O               | clock/mclk                         |
+| src0      | g0        | LUT6/O              | None       | SLICE_X52Y96    | X1Y1         |           1 |               0 |              40.000 | Multiple           | clock/mclk_BUFG_inst_i_1/O               | clock/mclk                         |
 | src1      | g1        | IBUF/O              | IOB_X0Y74  | IOB_X0Y74       | X0Y1         |           1 |               0 |                     |                    | clk_IBUF_inst/O                          | clk_IBUF                           |
 | src2      | g5        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X1Y1 | X1Y1         |           1 |               0 |              40.000 | clk_25m_clk_VGA    | clock/clk_25/inst/mmcm_adv_inst/CLKOUT0  | clock/clk_25/inst/clk_25m_clk_VGA  |
 | src2      | g2        | MMCME2_ADV/CLKFBOUT | None       | MMCME2_ADV_X1Y1 | X1Y1         |           1 |               0 |              10.000 | clkfbout_clk_VGA   | clock/clk_25/inst/mmcm_adv_inst/CLKFBOUT | clock/clk_25/inst/clkfbout_clk_VGA |
@@ -142,7 +142,7 @@ All Modules
 +-----------+-----------------+-------------------+----------+-------------+----------------+-------------+----------+----------------+----------+-----------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock    | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net       |
 +-----------+-----------------+-------------------+----------+-------------+----------------+-------------+----------+----------------+----------+-----------+
-| g0        | BUFG/O          | n/a               | Multiple |      21.408 | {0.000 10.704} |         185 |        0 |              0 |        0 | mclk_BUFG |
+| g0        | BUFG/O          | n/a               | Multiple |      40.000 | {0.000 20.000} |         185 |        0 |              0 |        0 | mclk_BUFG |
 +-----------+-----------------+-------------------+----------+-------------+----------------+-------------+----------+----------------+----------+-----------+
 * Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types

@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2019/12/22 11:04:32
-// Design Name: 
-// Module Name: uart
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module uart_rx(
 	//-----------input 
@@ -29,9 +9,8 @@ module uart_rx(
 	output reg pixel_data_en,
 	output reg  [11:0] pixel_data
     );
-localparam baud_cnt_end = 'd434 - 'd1							;//460800
+localparam baud_cnt_end = 'd434 - 'd1							;//230400 bps
 localparam baud_cnt_m 	= (baud_cnt_end ) / 'd2 		 		;
-// localparam baud_cnt_m 	= (baud_cnt_end + 'd1) / 'd2 - 'd1  ;
 //------------------------------
 reg rx1;
 reg rx2;
